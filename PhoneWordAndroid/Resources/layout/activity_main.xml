@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	tools:gridSpec="1|8|#0093eeff|K:#ee8700ff:16,l:72,l:16,r|S:#83ee00ff:16,0,l:16,56,l:16,0,r">
+
+	<TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:paddingHorizontal="20dp"
+		android:paddingTop="30dp"
+		android:text="@string/enterPhoneWord"
+		android:textAlignment="center"/>
+
+	<com.google.android.material.textfield.TextInputEditText
+		android:id="@+id/PhoneNumberText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:paddingHorizontal="20dp"
+		android:paddingTop="10dp"
+		android:text="@string/example_text"
+		android:textAlignment="center"/>
+
+	<Button
+		android:id="@+id/TranslateButton"
+		android:layout_width="match_parent"
+		android:layout_height="50dp"
+		android:layout_marginHorizontal="20dp"
+		android:layout_marginTop="10dp"
+		android:text="@string/translate"/>
+
+	<TextView
+		android:id="@+id/TranslatedPhoneWord"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:paddingHorizontal="20dp"
+		android:paddingTop="10dp"
+		android:text=""
+		android:textAlignment="center"/>
+
+	<Button
+		android:id="@+id/TranslationHistoryButton"
+		android:layout_width="match_parent"
+		android:layout_height="50dp"
+		android:layout_marginHorizontal="20dp"
+		android:layout_marginTop="10dp"
+		android:text="@string/translationHistory"/>
+
+</LinearLayout>

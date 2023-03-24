@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	tools:gridSpec="1|8|#0093eeff|K:#ee8700ff:16,l:72,l:16,r|S:#83ee00ff:16,0,l:16,56,l:16,0,r">
+
+	<TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:paddingHorizontal="20dp"
+		android:paddingTop="10dp"
+		android:text="@string/translationHistory"
+		android:textSize="24sp"
+		android:textStyle="bold"
+		android:textAlignment="center"/>
+
+	<androidx.recyclerview.widget.RecyclerView
+		android:id="@+id/rv_translation_history"  
+		android:scrollbars="vertical"
+		android:layout_width="fill_parent"  
+		android:layout_height="fill_parent"
+		android:layout_marginVertical="10dp"
+		android:layout_marginHorizontal="20dp"/>
+
+</LinearLayout>
