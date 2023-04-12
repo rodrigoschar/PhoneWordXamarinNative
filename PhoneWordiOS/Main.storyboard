@@ -71,30 +71,62 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Call History"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4IR-ZM-cDg">
+                                <rect key="frame" x="36" y="461" width="321" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="pnt-gY-nzi"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Get Coordinates"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duf-oa-GoS">
+                                <rect key="frame" x="36" y="526" width="321" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PyY-Js-PNi">
+                                <rect key="frame" x="36" y="536" width="321" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="duf-oa-GoS" firstAttribute="top" secondItem="4IR-ZM-cDg" secondAttribute="bottom" constant="15" id="9a6-TF-OKy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sul-Ce-yoU" secondAttribute="trailing" constant="20" id="9q6-eX-YeF"/>
                             <constraint firstItem="Tma-iR-Anf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="AtC-GF-NPd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Q9h-8S-Ztp" secondAttribute="trailing" constant="20" id="B92-nH-h5A"/>
+                            <constraint firstItem="4IR-ZM-cDg" firstAttribute="top" secondItem="Tma-iR-Anf" secondAttribute="bottom" constant="30" id="BU7-pl-ZhQ"/>
                             <constraint firstItem="Q9h-8S-Ztp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="CO4-mg-4N7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LUu-Uc-vLq" secondAttribute="trailing" constant="20" id="FiE-pJ-xB7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="duf-oa-GoS" secondAttribute="trailing" constant="20" id="Hxs-SC-p0l"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PyY-Js-PNi" secondAttribute="trailing" constant="20" id="Jxt-hj-Ik5"/>
                             <constraint firstItem="rWZ-mq-BDi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="Nrk-NP-9Ze"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rWZ-mq-BDi" secondAttribute="trailing" constant="20" id="SYJ-zU-uxw"/>
+                            <constraint firstItem="duf-oa-GoS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="UNf-Np-BVl"/>
                             <constraint firstItem="Tma-iR-Anf" firstAttribute="top" secondItem="sul-Ce-yoU" secondAttribute="bottom" constant="20" id="XxF-p6-2Xc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4IR-ZM-cDg" secondAttribute="trailing" constant="20" id="Y5N-Uk-fje"/>
+                            <constraint firstItem="4IR-ZM-cDg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="aGa-Mx-4kt"/>
                             <constraint firstItem="sul-Ce-yoU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="f0l-E7-AXF"/>
                             <constraint firstItem="Q9h-8S-Ztp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="gjN-hF-0aS"/>
                             <constraint firstItem="rWZ-mq-BDi" firstAttribute="top" secondItem="Q9h-8S-Ztp" secondAttribute="bottom" constant="20" id="h57-zi-pbe"/>
                             <constraint firstItem="LUu-Uc-vLq" firstAttribute="top" secondItem="rWZ-mq-BDi" secondAttribute="bottom" constant="30" id="hhE-ws-efV"/>
+                            <constraint firstItem="PyY-Js-PNi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="hqV-GZ-Crg"/>
                             <constraint firstItem="LUu-Uc-vLq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="iv0-Iz-ZMC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Tma-iR-Anf" secondAttribute="trailing" constant="20" id="j7l-fw-E2n"/>
+                            <constraint firstItem="PyY-Js-PNi" firstAttribute="top" secondItem="duf-oa-GoS" secondAttribute="bottom" constant="10" id="rVa-Dc-t45"/>
                             <constraint firstItem="sul-Ce-yoU" firstAttribute="top" secondItem="LUu-Uc-vLq" secondAttribute="bottom" constant="20" id="s6G-iX-LZa"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="K5L-gi-eL5"/>
                     <connections>
+                        <outlet property="LongitudeLabel" destination="PyY-Js-PNi" id="Mqn-T0-xE1"/>
                         <outlet property="callButton" destination="sul-Ce-yoU" id="7Nv-kY-W0R"/>
                         <outlet property="callHistoryButton" destination="Tma-iR-Anf" id="dBF-Pp-rt4"/>
+                        <outlet property="getCoordinatesButton" destination="4IR-ZM-cDg" id="nif-Uh-1op"/>
+                        <outlet property="latitudeLabel" destination="duf-oa-GoS" id="gHa-di-dNy"/>
                         <outlet property="phoneNumberTextField" destination="rWZ-mq-BDi" id="hXA-cS-TwC"/>
                         <outlet property="translateButton" destination="LUu-Uc-vLq" id="7Lj-AI-h6k"/>
                         <segue destination="HOz-r8-2k8" kind="show" id="p13-Qr-08U"/>

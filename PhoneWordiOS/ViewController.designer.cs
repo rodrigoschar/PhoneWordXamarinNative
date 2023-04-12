@@ -19,6 +19,15 @@ namespace PhoneWordiOS
 		UIKit.UIButton callHistoryButton { get; set; }
 
 		[Outlet]
+		UIKit.UIButton getCoordinatesButton { get; set; }
+
+		[Outlet]
+		UIKit.UILabel latitudeLabel { get; set; }
+
+		[Outlet]
+		UIKit.UILabel LongitudeLabel { get; set; }
+
+		[Outlet]
 		UIKit.UITextField phoneNumberTextField { get; set; }
 
 		[Outlet]
@@ -26,6 +35,16 @@ namespace PhoneWordiOS
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (callButton != null) {
+				callButton.Dispose ();
+				callButton = null;
+			}
+
+			if (callHistoryButton != null) {
+				callHistoryButton.Dispose ();
+				callHistoryButton = null;
+			}
+
 			if (phoneNumberTextField != null) {
 				phoneNumberTextField.Dispose ();
 				phoneNumberTextField = null;
@@ -36,14 +55,19 @@ namespace PhoneWordiOS
 				translateButton = null;
 			}
 
-			if (callButton != null) {
-				callButton.Dispose ();
-				callButton = null;
+			if (getCoordinatesButton != null) {
+				getCoordinatesButton.Dispose ();
+				getCoordinatesButton = null;
 			}
 
-			if (callHistoryButton != null) {
-				callHistoryButton.Dispose ();
-				callHistoryButton = null;
+			if (latitudeLabel != null) {
+				latitudeLabel.Dispose ();
+				latitudeLabel = null;
+			}
+
+			if (LongitudeLabel != null) {
+				LongitudeLabel.Dispose ();
+				LongitudeLabel = null;
 			}
 		}
 	}
