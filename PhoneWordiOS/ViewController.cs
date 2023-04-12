@@ -8,7 +8,6 @@ namespace PhoneWordiOS
 {
     public partial class ViewController : UIViewController
     {
-        //static readonly List<string> phoneNumbers = new List<string>();
         public ViewController (IntPtr handle) : base (handle)
         {
         }
@@ -41,9 +40,8 @@ namespace PhoneWordiOS
                 }
                 else
                 {
-                    //phoneNumbers.Add(translatedNumber);
                     var db = new Core.DB.DatabaseManager(new DB.PathManager());
-                    db.CreatePhoneNumber(new Core.Models.PhoneNumber() { phoneNumber = translatedNumber });
+                    db.StoreData(new Core.Models.PhoneNumber() { phoneNumber = translatedNumber }, Core.Util.Enums.DBModels.User.ToString());
                     callButton.SetTitle("Call " + translatedNumber,
                         UIControlState.Normal);
                     callButton.Enabled = true;
@@ -63,11 +61,8 @@ namespace PhoneWordiOS
 
             callHistoryButton.TouchUpInside += (object sender, EventArgs e) => {
                 CallHistoryController callHistory = this.Storyboard.InstantiateViewController("CallHistoryController") as CallHistoryController;
-                //var callHistory =
-                  //    (CallHistoryController)this.Storyboard.InstantiateViewController("mainNavController");
                 if (callHistory != null)
                 {
-                    //callHistory.phoneNumbers = phoneNumbers;
                     this.NavigationController.PushViewController(callHistory, true);
                 }
             };

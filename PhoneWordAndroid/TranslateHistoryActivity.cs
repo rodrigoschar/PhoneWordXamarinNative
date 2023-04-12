@@ -28,14 +28,16 @@ namespace PhoneWordAndroid
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_translation_history);
 
-            //var phoneNumbers = Intent.Extras.GetStringArrayList("phone_numbers") ?? new string[0];
             var db = new Core.DB.DatabaseManager(new DB.PathManager());
-            var phoneNumbers = db.GetAllPhoneNumbers();
+            var phoneNumbers = db.GetAllData<Core.Models.PhoneNumber>();
 
             historyList = new List<TranslationHistory>();
-            foreach (Core.Models.PhoneNumber item in phoneNumbers) //string item
+            if (phoneNumbers.Success)
             {
-                historyList.Add(new TranslationHistory() { history = item.phoneNumber }); //item
+                foreach (Core.Models.PhoneNumber item in phoneNumbers.Value)
+                {
+                    historyList.Add(new TranslationHistory() { history = item.phoneNumber });
+                }
             }
 
             recyclerView = FindViewById<RecyclerView>(Resource.Id.rv_translation_history);

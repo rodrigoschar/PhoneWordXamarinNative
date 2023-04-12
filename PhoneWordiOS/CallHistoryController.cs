@@ -9,7 +9,6 @@ namespace PhoneWordiOS
 {
 	public partial class CallHistoryController : UIViewController
 	{
-       //public List<string> phoneNumbers;
         static NSString MyCellId = new NSString("MyCellId");
         public CallHistoryController (IntPtr handle) : base (handle)
 		{
@@ -20,8 +19,8 @@ namespace PhoneWordiOS
             base.ViewDidLoad();
 
             var db = new Core.DB.DatabaseManager(new DB.PathManager());
-            var phoneNumbers = db.GetAllPhoneNumbers();
-            callHistoryTableView.Source = new TableViewSource(phoneNumbers, this);
+            var phoneNumbers = db.GetAllData<Core.Models.PhoneNumber>();
+            callHistoryTableView.Source = new TableViewSource(phoneNumbers.Value, this);
         }
 
         public class TableViewSource : UITableViewSource

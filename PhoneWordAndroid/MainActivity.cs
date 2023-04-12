@@ -14,7 +14,6 @@ namespace PhoneWordAndroid
     [Activity(Label = "Phone Word", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
-        //static readonly List<string> phoneNumbers = new List<string>();
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -50,8 +49,7 @@ namespace PhoneWordAndroid
                 {
                     translatedPhoneWord.Text = translatedNumber;                 
                     var db = new Core.DB.DatabaseManager(new DB.PathManager());
-                    db.CreatePhoneNumber(new Core.Models.PhoneNumber() { phoneNumber = translatedNumber });
-                    //phoneNumbers.Add(translatedNumber);
+                    db.StoreData(new Core.Models.PhoneNumber() { phoneNumber = translatedNumber }, Core.Util.Enums.DBModels.User.ToString());
                     translationHistoryButton.Enabled = true;
                 }
             };
@@ -59,9 +57,7 @@ namespace PhoneWordAndroid
             translationHistoryButton.Click += (sender, e) =>
             {
                 var intent = new Intent(this, typeof(TranslateHistoryActivity));
-                //intent.PutStringArrayListExtra("phone_numbers", phoneNumbers);
                 StartActivity(intent);
-                //DeviceInfo.Platform;
             };
         }
     }
