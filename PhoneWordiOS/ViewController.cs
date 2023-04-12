@@ -14,7 +14,9 @@ namespace PhoneWordiOS
 {
     public partial class ViewController : UIViewController
     {
-        CancellationTokenSource cts;
+        private CancellationTokenSource cts;
+        private double currentLat;
+        private double currentLng;
 
         public ViewController (IntPtr handle) : base (handle)
         {
@@ -80,12 +82,37 @@ namespace PhoneWordiOS
                 var coordinates = await GetCurrentLocation();
                 if (coordinates.Success)
                 {
+                    currentLat = coordinates.Value.Latitude;
+                    currentLng = coordinates.Value.Longitude;
                     latitudeLabel.Text = $"Latitude: {coordinates.Value.Latitude.ToString()}";
                     LongitudeLabel.Text = $"Longitude: {coordinates.Value.Longitude.ToString()}";
                 }
                 else
                 {
                     Toast.MakeToast(coordinates.Error).Show();
+                }
+            };
+
+            openMapsButton.TouchUpInside += async (object sender, EventArgs e) =>
+            {
+                if (currentLat == 0 && currentLng == 0)
+                {
+                    var coordinates = await GetCurrentLocation();
+                    if (coordinates.Success)
+                    {
+                        await Map.OpenAsync(coordinates.Value.Latitude, coordinates.Value.Longitude, new MapLaunchOptions
+                        {
+                            Name = "Current Location",
+                            NavigationMode = NavigationMode.None
+                        });
+                    }
+                } else
+                {
+                    await Map.OpenAsync(currentLat, currentLng, new MapLaunchOptions
+                    {
+                        Name = "Current Location",
+                        NavigationMode = NavigationMode.None
+                    });
                 }
             };
         }

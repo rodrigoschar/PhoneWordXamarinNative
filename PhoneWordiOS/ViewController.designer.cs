@@ -28,6 +28,9 @@ namespace PhoneWordiOS
 		UIKit.UILabel LongitudeLabel { get; set; }
 
 		[Outlet]
+		UIKit.UIButton openMapsButton { get; set; }
+
+		[Outlet]
 		UIKit.UITextField phoneNumberTextField { get; set; }
 
 		[Outlet]
@@ -45,16 +48,6 @@ namespace PhoneWordiOS
 				callHistoryButton = null;
 			}
 
-			if (phoneNumberTextField != null) {
-				phoneNumberTextField.Dispose ();
-				phoneNumberTextField = null;
-			}
-
-			if (translateButton != null) {
-				translateButton.Dispose ();
-				translateButton = null;
-			}
-
 			if (getCoordinatesButton != null) {
 				getCoordinatesButton.Dispose ();
 				getCoordinatesButton = null;
@@ -68,6 +61,21 @@ namespace PhoneWordiOS
 			if (LongitudeLabel != null) {
 				LongitudeLabel.Dispose ();
 				LongitudeLabel = null;
+			}
+
+			if (phoneNumberTextField != null) {
+				phoneNumberTextField.Dispose ();
+				phoneNumberTextField = null;
+			}
+
+			if (translateButton != null) {
+				translateButton.Dispose ();
+				translateButton = null;
+			}
+
+			if (openMapsButton != null) {
+				openMapsButton.Dispose ();
+				openMapsButton = null;
 			}
 		}
 	}

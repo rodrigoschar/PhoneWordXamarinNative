@@ -6,5 +6,6 @@
     <string name="translationHistory">Translation History</string>
     <string name="enterPhoneWord">Enter a PhoneWord</string>
     <string name="get_coordinates">Get Coordinates</string>
+    <string name="open_maps">Open Maps</string>
 </resources>
 

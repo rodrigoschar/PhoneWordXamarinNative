@@ -91,6 +91,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Nv-0x-TZf">
+                                <rect key="frame" x="36" y="566" width="321" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="PX4-Co-xee"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Open Maps"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -103,6 +111,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="LUu-Uc-vLq" secondAttribute="trailing" constant="20" id="FiE-pJ-xB7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="duf-oa-GoS" secondAttribute="trailing" constant="20" id="Hxs-SC-p0l"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PyY-Js-PNi" secondAttribute="trailing" constant="20" id="Jxt-hj-Ik5"/>
+                            <constraint firstItem="7Nv-0x-TZf" firstAttribute="top" secondItem="PyY-Js-PNi" secondAttribute="bottom" constant="30" id="LYm-kt-NIj"/>
                             <constraint firstItem="rWZ-mq-BDi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="Nrk-NP-9Ze"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rWZ-mq-BDi" secondAttribute="trailing" constant="20" id="SYJ-zU-uxw"/>
                             <constraint firstItem="duf-oa-GoS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="UNf-Np-BVl"/>
@@ -116,8 +125,10 @@
                             <constraint firstItem="PyY-Js-PNi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="hqV-GZ-Crg"/>
                             <constraint firstItem="LUu-Uc-vLq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="iv0-Iz-ZMC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Tma-iR-Anf" secondAttribute="trailing" constant="20" id="j7l-fw-E2n"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7Nv-0x-TZf" secondAttribute="trailing" constant="20" id="l66-Rj-Awz"/>
                             <constraint firstItem="PyY-Js-PNi" firstAttribute="top" secondItem="duf-oa-GoS" secondAttribute="bottom" constant="10" id="rVa-Dc-t45"/>
                             <constraint firstItem="sul-Ce-yoU" firstAttribute="top" secondItem="LUu-Uc-vLq" secondAttribute="bottom" constant="20" id="s6G-iX-LZa"/>
+                            <constraint firstItem="7Nv-0x-TZf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="xjS-1U-Ckd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="K5L-gi-eL5"/>
@@ -127,6 +138,7 @@
                         <outlet property="callHistoryButton" destination="Tma-iR-Anf" id="dBF-Pp-rt4"/>
                         <outlet property="getCoordinatesButton" destination="4IR-ZM-cDg" id="nif-Uh-1op"/>
                         <outlet property="latitudeLabel" destination="duf-oa-GoS" id="gHa-di-dNy"/>
+                        <outlet property="openMapsButton" destination="7Nv-0x-TZf" id="P1w-Iv-o6h"/>
                         <outlet property="phoneNumberTextField" destination="rWZ-mq-BDi" id="hXA-cS-TwC"/>
                         <outlet property="translateButton" destination="LUu-Uc-vLq" id="7Lj-AI-h6k"/>
                         <segue destination="HOz-r8-2k8" kind="show" id="p13-Qr-08U"/>

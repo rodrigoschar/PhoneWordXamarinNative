@@ -19,7 +19,9 @@ namespace PhoneWordAndroid
     [Activity(Label = "Phone Word", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
-        CancellationTokenSource cts;
+        private CancellationTokenSource cts;
+        private double currentLat;
+        private double currentLng;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -45,6 +47,7 @@ namespace PhoneWordAndroid
             Button getCoordinatesButton = FindViewById<Button>(Resource.Id.BtnGetCoordinates);
             TextView lat = FindViewById<TextView>(Resource.Id.latitude);
             TextView lon = FindViewById<TextView>(Resource.Id.longitude);
+            Button openMaps = FindViewById<Button>(Resource.Id.BtnOpenMaps);
 
             string translatedNumber = string.Empty;
 
@@ -80,6 +83,30 @@ namespace PhoneWordAndroid
                 } else
                 {
                     Toast.MakeText(this, coordinates.Error, ToastLength.Short).Show();
+                }
+            };
+
+            openMaps.Click += async (sender, e) =>
+            {
+                if (currentLat == 0 && currentLng == 0)
+                {
+                    var coordinates = await GetCurrentLocation();
+                    if (coordinates.Success)
+                    {
+                        await Map.OpenAsync(coordinates.Value.Latitude, coordinates.Value.Longitude, new MapLaunchOptions
+                        {
+                            Name = "Current Location",
+                            NavigationMode = NavigationMode.None
+                        });
+                    }
+                }
+                else
+                {
+                    await Map.OpenAsync(currentLat, currentLng, new MapLaunchOptions
+                    {
+                        Name = "Current Location",
+                        NavigationMode = NavigationMode.None
+                    });
                 }
             };
         }
