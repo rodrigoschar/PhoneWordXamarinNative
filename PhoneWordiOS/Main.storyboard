@@ -80,12 +80,20 @@
                                 <buttonConfiguration key="configuration" style="tinted" title="Go to Maps"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9v-gY-hKH">
-                                <rect key="frame" x="36" y="561" width="321" height="50"/>
+                                <rect key="frame" x="36" y="551" width="321" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="qkj-GS-02N"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Go to Camera"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAA-Dc-Ves">
+                                <rect key="frame" x="36" y="621" width="321" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="gxF-pc-yRa"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Go to Camera With Essentials"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -96,11 +104,14 @@
                             <constraint firstItem="Tma-iR-Anf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="AtC-GF-NPd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Q9h-8S-Ztp" secondAttribute="trailing" constant="20" id="B92-nH-h5A"/>
                             <constraint firstItem="Q9h-8S-Ztp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="CO4-mg-4N7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yAA-Dc-Ves" secondAttribute="trailing" constant="20" id="Chk-lW-ltc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LUu-Uc-vLq" secondAttribute="trailing" constant="20" id="FiE-pJ-xB7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="x9v-gY-hKH" secondAttribute="trailing" constant="20" id="HAE-LH-L5G"/>
                             <constraint firstItem="rWZ-mq-BDi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="Nrk-NP-9Ze"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rWZ-mq-BDi" secondAttribute="trailing" constant="20" id="SYJ-zU-uxw"/>
+                            <constraint firstItem="yAA-Dc-Ves" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="TwU-xq-OMx"/>
                             <constraint firstItem="Tma-iR-Anf" firstAttribute="top" secondItem="sul-Ce-yoU" secondAttribute="bottom" constant="20" id="XxF-p6-2Xc"/>
+                            <constraint firstItem="yAA-Dc-Ves" firstAttribute="top" secondItem="x9v-gY-hKH" secondAttribute="bottom" constant="20" id="bzi-h4-NJ1"/>
                             <constraint firstItem="sul-Ce-yoU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="f0l-E7-AXF"/>
                             <constraint firstItem="Q9h-8S-Ztp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="gjN-hF-0aS"/>
                             <constraint firstItem="rWZ-mq-BDi" firstAttribute="top" secondItem="Q9h-8S-Ztp" secondAttribute="bottom" constant="20" id="h57-zi-pbe"/>
@@ -110,7 +121,7 @@
                             <constraint firstItem="x9v-gY-hKH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="o1N-xh-HJQ"/>
                             <constraint firstItem="sul-Ce-yoU" firstAttribute="top" secondItem="LUu-Uc-vLq" secondAttribute="bottom" constant="20" id="s6G-iX-LZa"/>
                             <constraint firstItem="4yb-Gh-HOH" firstAttribute="top" secondItem="Tma-iR-Anf" secondAttribute="bottom" constant="50" id="tgG-Yk-Vpu"/>
-                            <constraint firstItem="x9v-gY-hKH" firstAttribute="top" secondItem="4yb-Gh-HOH" secondAttribute="bottom" constant="30" id="yis-uH-POX"/>
+                            <constraint firstItem="x9v-gY-hKH" firstAttribute="top" secondItem="4yb-Gh-HOH" secondAttribute="bottom" constant="20" id="yis-uH-POX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="K5L-gi-eL5"/>
@@ -119,6 +130,7 @@
                         <outlet property="callHistoryButton" destination="Tma-iR-Anf" id="dBF-Pp-rt4"/>
                         <outlet property="goToCameraButton" destination="x9v-gY-hKH" id="eno-Gj-EvY"/>
                         <outlet property="goToLocationButton" destination="4yb-Gh-HOH" id="3ck-cM-SW0"/>
+                        <outlet property="gotoCameEssentialsButton" destination="yAA-Dc-Ves" id="OnV-rO-dNO"/>
                         <outlet property="phoneNumberTextField" destination="rWZ-mq-BDi" id="hXA-cS-TwC"/>
                         <outlet property="translateButton" destination="LUu-Uc-vLq" id="7Lj-AI-h6k"/>
                         <segue destination="HOz-r8-2k8" kind="show" id="p13-Qr-08U"/>
@@ -161,6 +173,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hgH-GK-tbD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1066" y="13"/>
+        </scene>
+        <!--Camera Essentials View Controller-->
+        <scene sceneID="CH4-b8-AXE">
+            <objects>
+                <viewController storyboardIdentifier="CameraEssentialsViewController" id="6Uj-Mk-kod" customClass="CameraEssentialsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rcK-fd-aO1"/>
+                        <viewControllerLayoutGuide type="bottom" id="PtM-Ow-wbf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GDa-DR-G9D">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="vxa-nH-PAS">
+                                <rect key="frame" x="36" y="89" width="321" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="F8g-D7-ot6"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yrd-XM-eUZ">
+                                <rect key="frame" x="36" y="359" width="321" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Qwu-rk-JM9"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Open Camera Essentials"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vxa-nH-PAS" firstAttribute="leading" secondItem="GDa-DR-G9D" secondAttribute="leadingMargin" constant="20" id="3RA-0y-3Wo"/>
+                            <constraint firstItem="yrd-XM-eUZ" firstAttribute="leading" secondItem="GDa-DR-G9D" secondAttribute="leadingMargin" constant="20" id="Fxk-hb-KGb"/>
+                            <constraint firstItem="vxa-nH-PAS" firstAttribute="top" secondItem="rcK-fd-aO1" secondAttribute="bottom" constant="30" id="beU-bK-sbR"/>
+                            <constraint firstItem="yrd-XM-eUZ" firstAttribute="top" secondItem="vxa-nH-PAS" secondAttribute="bottom" constant="20" id="fxe-uT-zgK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vxa-nH-PAS" secondAttribute="trailing" constant="20" id="fzt-ra-ZjY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yrd-XM-eUZ" secondAttribute="trailing" constant="20" id="vmc-AZ-AY8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="openCameraButton" destination="yrd-XM-eUZ" id="WRr-xA-H7R"/>
+                        <outlet property="photoImageView" destination="vxa-nH-PAS" id="XZa-uA-eZK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dnh-fe-B1I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1875" y="16"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="7SN-RB-pu4">

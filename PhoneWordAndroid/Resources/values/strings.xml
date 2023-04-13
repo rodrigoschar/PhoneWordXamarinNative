@@ -9,6 +9,8 @@
     <string name="open_maps">Open Maps</string>
     <string name="go_to_location_view">Go to location View</string>
     <string name="go_to_camera_view">Go to Camera View</string>
+    <string name="go_to_camera_essentials">Go to Camera Essentials</string>
     <string name="open_camera">Open Camera</string>
+    <string name="open_camera_essentials">Open Camera With Essentials</string>
 </resources>
 

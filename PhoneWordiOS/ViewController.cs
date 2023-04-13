@@ -86,6 +86,15 @@ namespace PhoneWordiOS
                     this.NavigationController.PushViewController(cameraView, true);
                 }
             };
+
+            gotoCameEssentialsButton.TouchUpInside += (object sender, EventArgs e) =>
+            {
+                CameraEssentialsViewController cameraView = this.Storyboard.InstantiateViewController("CameraEssentialsViewController") as CameraEssentialsViewController;
+                if (cameraView != null)
+                {
+                    this.NavigationController.PushViewController(cameraView, true);
+                }
+            };
         }
     }
 }

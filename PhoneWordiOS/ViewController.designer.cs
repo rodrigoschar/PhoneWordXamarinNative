@@ -19,6 +19,9 @@ namespace PhoneWordiOS
 		UIKit.UIButton callHistoryButton { get; set; }
 
 		[Outlet]
+		UIKit.UIButton gotoCameEssentialsButton { get; set; }
+
+		[Outlet]
 		UIKit.UIButton goToCameraButton { get; set; }
 
 		[Outlet]
@@ -42,14 +45,14 @@ namespace PhoneWordiOS
 				callHistoryButton = null;
 			}
 
-			if (goToLocationButton != null) {
-				goToLocationButton.Dispose ();
-				goToLocationButton = null;
-			}
-
 			if (goToCameraButton != null) {
 				goToCameraButton.Dispose ();
 				goToCameraButton = null;
+			}
+
+			if (goToLocationButton != null) {
+				goToLocationButton.Dispose ();
+				goToLocationButton = null;
 			}
 
 			if (phoneNumberTextField != null) {
@@ -60,6 +63,11 @@ namespace PhoneWordiOS
 			if (translateButton != null) {
 				translateButton.Dispose ();
 				translateButton = null;
+			}
+
+			if (gotoCameEssentialsButton != null) {
+				gotoCameEssentialsButton.Dispose ();
+				gotoCameEssentialsButton = null;
 			}
 		}
 	}

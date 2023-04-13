@@ -8,20 +8,12 @@
 		android:src="@android:drawable/ic_menu_gallery"
 		android:layout_width="fill_parent"
 		android:layout_height="300dp"
-		android:id="@+id/IvCameraPhoto"
+		android:id="@+id/essentialsImageView"
 		android:adjustViewBounds="true"
 		android:contentDescription="" />
 
     <Button
-		android:id="@+id/BtnOpenCameraIntent"
-		android:layout_width="match_parent"
-		android:layout_height="50dp"
-		android:layout_marginHorizontal="20dp"
-		android:layout_marginTop="30dp"
-		android:text="@string/open_camera"/>
-
-	<Button
-		android:id="@+id/BtnOpenCameraEssentials"
+		android:id="@+id/btnOpenCameraEssentials"
 		android:layout_width="match_parent"
 		android:layout_height="50dp"
 		android:layout_marginHorizontal="20dp"
@@ -30,3 +22,4 @@
 
 
 </LinearLayout>
+

@@ -153,6 +153,10 @@
         <Compile Include="CameraViewController.designer.cs">
           <DependentUpon>CameraViewController.cs</DependentUpon>
         </Compile>
+        <Compile Include="CameraEssentialsViewController.cs" />
+        <Compile Include="CameraEssentialsViewController.designer.cs">
+          <DependentUpon>CameraEssentialsViewController.cs</DependentUpon>
+        </Compile>
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\Core\Core.csproj">
