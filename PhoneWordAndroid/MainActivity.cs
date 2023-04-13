@@ -61,6 +61,7 @@ namespace PhoneWordAndroid
                 var intent = new Intent(this, typeof(MapActivity));
                 StartActivity(intent);
             };
+
         }
     }
 }

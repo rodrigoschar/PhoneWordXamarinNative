@@ -66,6 +66,7 @@
     <Compile Include="TranslationHistoryAdapter.cs" />
     <Compile Include="DB\PathManager.cs" />
     <Compile Include="MapActivity.cs" />
+    <Compile Include="CameraActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -106,6 +107,10 @@
       <Generator></Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\activity_map.xml">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\activity_camera.xml">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
