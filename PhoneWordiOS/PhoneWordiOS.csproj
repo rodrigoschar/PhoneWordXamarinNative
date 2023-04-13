@@ -116,6 +116,9 @@
         <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png">
             <Visible>false</Visible>
         </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\default.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\default.imageset\default.png" />
     </ItemGroup>
     <ItemGroup>
         <Folder Include="Resources\" />
@@ -145,6 +148,10 @@
         <Compile Include="MapViewController.cs" />
         <Compile Include="MapViewController.designer.cs">
           <DependentUpon>MapViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="CameraViewController.cs" />
+        <Compile Include="CameraViewController.designer.cs">
+          <DependentUpon>CameraViewController.cs</DependentUpon>
         </Compile>
     </ItemGroup>
     <ItemGroup>

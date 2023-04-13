@@ -31,6 +31,7 @@ namespace PhoneWordAndroid
             Button translateButton = FindViewById<Button>(Resource.Id.TranslateButton);
             Button translationHistoryButton = FindViewById<Button>(Resource.Id.TranslationHistoryButton);
             Button goToLocationButton = FindViewById<Button>(Resource.Id.BtnOpenMaps);
+            Button gotoCameraLocationButton = FindViewById<Button>(Resource.Id.BtnOpenCa);
 
             string translatedNumber = string.Empty;
 
@@ -62,6 +63,11 @@ namespace PhoneWordAndroid
                 StartActivity(intent);
             };
 
+            gotoCameraLocationButton.Click += (sender, e) =>
+            {
+                var intent = new Intent(this, typeof(CameraActivity));
+                StartActivity(intent);
+            };
         }
     }
 }
