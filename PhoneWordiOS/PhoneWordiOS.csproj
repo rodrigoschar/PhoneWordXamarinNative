@@ -142,6 +142,10 @@
           <DependentUpon>CallHistoryController.cs</DependentUpon>
         </Compile>
         <Compile Include="DB\PathManager.cs" />
+        <Compile Include="MapViewController.cs" />
+        <Compile Include="MapViewController.designer.cs">
+          <DependentUpon>MapViewController.cs</DependentUpon>
+        </Compile>
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\Core\Core.csproj">

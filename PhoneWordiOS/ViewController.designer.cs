@@ -19,16 +19,10 @@ namespace PhoneWordiOS
 		UIKit.UIButton callHistoryButton { get; set; }
 
 		[Outlet]
-		UIKit.UIButton getCoordinatesButton { get; set; }
+		UIKit.UIButton goToCameraButton { get; set; }
 
 		[Outlet]
-		UIKit.UILabel latitudeLabel { get; set; }
-
-		[Outlet]
-		UIKit.UILabel LongitudeLabel { get; set; }
-
-		[Outlet]
-		UIKit.UIButton openMapsButton { get; set; }
+		UIKit.UIButton goToLocationButton { get; set; }
 
 		[Outlet]
 		UIKit.UITextField phoneNumberTextField { get; set; }
@@ -48,19 +42,14 @@ namespace PhoneWordiOS
 				callHistoryButton = null;
 			}
 
-			if (getCoordinatesButton != null) {
-				getCoordinatesButton.Dispose ();
-				getCoordinatesButton = null;
+			if (goToLocationButton != null) {
+				goToLocationButton.Dispose ();
+				goToLocationButton = null;
 			}
 
-			if (latitudeLabel != null) {
-				latitudeLabel.Dispose ();
-				latitudeLabel = null;
-			}
-
-			if (LongitudeLabel != null) {
-				LongitudeLabel.Dispose ();
-				LongitudeLabel = null;
+			if (goToCameraButton != null) {
+				goToCameraButton.Dispose ();
+				goToCameraButton = null;
 			}
 
 			if (phoneNumberTextField != null) {
@@ -71,11 +60,6 @@ namespace PhoneWordiOS
 			if (translateButton != null) {
 				translateButton.Dispose ();
 				translateButton = null;
-			}
-
-			if (openMapsButton != null) {
-				openMapsButton.Dispose ();
-				openMapsButton = null;
 			}
 		}
 	}
