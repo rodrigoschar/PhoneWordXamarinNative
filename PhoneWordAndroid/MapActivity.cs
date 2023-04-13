@@ -12,17 +12,30 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Util;
 using Core.DB;
 using Core.Models;
+using Android.Locations;
+using Android.Nfc;
+using static Android.Media.MicrophoneInfo;
+using AndroidX.Core.Content;
+using Android;
+using Android.Content.PM;
+using AndroidX.Core.App;
 
 namespace PhoneWordAndroid
 {
     [Activity(Label = "MapActivity")]
-    public class MapActivity : Activity
+    public class MapActivity : Activity, ILocationListener
     {
         private CancellationTokenSource cts;
         private double currentLat;
         private double currentLng;
+        private TextView txtLatNat;
+        private TextView txtLngNat;
+        private Android.Locations.Location currentLocation;
+        private LocationManager locationManager;
+        string locationProvider;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -30,6 +43,7 @@ namespace PhoneWordAndroid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_map);
             SetupUI();
+            
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
@@ -45,6 +59,16 @@ namespace PhoneWordAndroid
             TextView lat = FindViewById<TextView>(Resource.Id.latitude);
             TextView lon = FindViewById<TextView>(Resource.Id.longitude);
             Button openMaps = FindViewById<Button>(Resource.Id.BtnOpenMaps);
+
+            Button getCoordinatesNativeButton = FindViewById<Button>(Resource.Id.btnGetCoordinatesNative);
+            txtLatNat = FindViewById<TextView>(Resource.Id.latitudeNative);
+            txtLngNat = FindViewById<TextView>(Resource.Id.longitudeNative);
+            InitializeLocationManager();
+
+            if (!(ContextCompat.CheckSelfPermission(this, Manifest.Permission.AccessFineLocation) == (int)Permission.Granted))
+            {
+                ActivityCompat.RequestPermissions(this, new String[] { Manifest.Permission.AccessFineLocation }, 1);
+            }
 
             getCoordinatesButton.Click += async (sender, e) =>
             {
@@ -82,6 +106,11 @@ namespace PhoneWordAndroid
                         NavigationMode = NavigationMode.None
                     });
                 }
+            };
+
+            getCoordinatesNativeButton.Click += (sender, e) =>
+            {
+
             };
         }
 
@@ -121,11 +150,73 @@ namespace PhoneWordAndroid
             }
         }
 
+        private void InitializeLocationManager()
+        {
+            locationManager = (LocationManager)GetSystemService(LocationService);
+            Criteria criteriaForLocationService = new Criteria
+            {
+                Accuracy = Accuracy.Fine
+            };
+            IList<string> acceptableLocationProviders = locationManager.GetProviders(criteriaForLocationService, true);
+            if (acceptableLocationProviders.Any())
+            {
+                locationProvider = acceptableLocationProviders.First();
+            }
+            else
+            {
+                locationProvider = string.Empty;
+            }
+        }
+
+        protected override void OnResume()
+        {
+            base.OnResume();
+            if (ContextCompat.CheckSelfPermission(this, Manifest.Permission.AccessFineLocation) == (int)Permission.Granted)
+            {
+                locationManager.RequestLocationUpdates(locationProvider, 0, 0, this);
+            }
+        }
+
+        protected override void OnPause()
+        {
+            base.OnPause();
+            locationManager.RemoveUpdates(this);
+        }
+
         protected override void OnDestroy()
         {
             base.OnDestroy();
             if (cts != null && !cts.IsCancellationRequested)
                 cts.Cancel();
+        }
+
+        public void OnLocationChanged(Android.Locations.Location location)
+        {
+            currentLocation = location;
+            if (currentLocation == null)
+            {
+                Toast.MakeText(this, "Error trying to get the current location", ToastLength.Short).Show();
+            }
+            else
+            {
+                txtLatNat.Text = currentLocation.Latitude.ToString();
+                txtLngNat.Text = currentLocation.Longitude.ToString();
+            }
+        }
+
+        public void OnProviderDisabled(string provider)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void OnProviderEnabled(string provider)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void OnStatusChanged(string provider, [GeneratedEnum] Availability status, Bundle extras)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -38,4 +38,30 @@
 		android:layout_marginTop="30dp"
 		android:text="@string/open_maps"/>
 
+	<Button
+		android:id="@+id/btnGetCoordinatesNative"
+		android:layout_width="match_parent"
+		android:layout_height="50dp"
+		android:layout_marginHorizontal="20dp"
+		android:layout_marginTop="50dp"
+		android:text="@string/get_coordinates"/>
+
+	<TextView
+		android:id="@+id/latitudeNative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:paddingHorizontal="20dp"
+		android:paddingTop="10dp"
+		android:text=""
+		android:textAlignment="center"/>
+
+	<TextView
+		android:id="@+id/longitudeNative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:paddingHorizontal="20dp"
+		android:paddingTop="10dp"
+		android:text=""
+		android:textAlignment="center"/>
+
 </LinearLayout>
