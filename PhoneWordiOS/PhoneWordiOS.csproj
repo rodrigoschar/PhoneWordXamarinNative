@@ -157,6 +157,8 @@
         <Compile Include="CameraEssentialsViewController.designer.cs">
           <DependentUpon>CameraEssentialsViewController.cs</DependentUpon>
         </Compile>
+        <Compile Include="LocationManager.cs" />
+        <Compile Include="LocationUpdatedEventArgs.cs" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\Core\Core.csproj">

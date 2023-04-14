@@ -19,7 +19,13 @@ namespace PhoneWordiOS
 		UIKit.UILabel latitudeLabel { get; set; }
 
 		[Outlet]
+		UIKit.UILabel latitudeNativeLabel { get; set; }
+
+		[Outlet]
 		UIKit.UILabel LongitudeLabel { get; set; }
+
+		[Outlet]
+		UIKit.UILabel longitudNativeLabel { get; set; }
 
 		[Outlet]
 		UIKit.UIButton openMapButton { get; set; }
@@ -44,6 +50,16 @@ namespace PhoneWordiOS
 			if (openMapButton != null) {
 				openMapButton.Dispose ();
 				openMapButton = null;
+			}
+
+			if (latitudeNativeLabel != null) {
+				latitudeNativeLabel.Dispose ();
+				latitudeNativeLabel = null;
+			}
+
+			if (longitudNativeLabel != null) {
+				longitudNativeLabel.Dispose ();
+				longitudNativeLabel = null;
 			}
 		}
 	}

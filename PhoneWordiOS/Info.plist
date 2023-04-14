@@ -46,6 +46,8 @@
     <string>Main</string>
     <key>NSLocationWhenInUseUsageDescription</key>
     <string>Fill in a reason why your app needs access to location.</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Fill in a reason why your app needs access to location.</string>
     <key>NSCameraUsageDescription</key>
     <string>This app needs access to the camera to take photos.</string>
     <key>NSMicrophoneUsageDescription</key>
@@ -54,6 +56,10 @@
     <string>This app needs access to the photo gallery for picking photos and videos.</string>
     <key>NSPhotoLibraryUsageDescription</key>
     <string>This app needs access to photos gallery for picking photos and videos.</string>
+    <key>UIBackgroundModes</key>
+    <array>
+    <string>location</string>
+    </array>
     <key>UIRequiredDeviceCapabilities</key>
     <array>
         <string>armv7</string>

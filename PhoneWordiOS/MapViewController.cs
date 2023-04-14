@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using UIKit;
 using Xamarin.Essentials;
 using GlobalToast;
+using CoreLocation;
 
 namespace PhoneWordiOS
 {
@@ -14,15 +15,20 @@ namespace PhoneWordiOS
         private CancellationTokenSource cts;
         private double currentLat;
         private double currentLng;
+        public static LocationManager Manager { get; set; }
 
         public MapViewController (IntPtr handle) : base (handle)
         {
-		}
+            // As soon as the app is done launching, begin generating location updates in the location manager
+            Manager = new LocationManager();
+            Manager.StartLocationUpdates();
+        }
 
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
             SetupUi();
+            Manager.LocationUpdated += HandleLocationChanged;
         }
 
 		public override void DidReceiveMemoryWarning ()
@@ -71,6 +77,17 @@ namespace PhoneWordiOS
                     });
                 }
             };
+        }
+
+        public void HandleLocationChanged(object sender, LocationUpdatedEventArgs e)
+        {
+            // Handle foreground updates
+            CLLocation location = e.Location;
+
+            latitudeNativeLabel.Text = $"Latitude: {location.Coordinate.Latitude.ToString()}";
+            longitudNativeLabel.Text = $"Latitude: {location.Coordinate.Longitude.ToString()}";
+
+            Console.WriteLine("foreground updated");
         }
 
         private async Task<Result<Coordinates>> GetCurrentLocation()

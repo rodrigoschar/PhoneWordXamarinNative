@@ -306,16 +306,43 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Open Maps"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get Coordinates With CLLocationManager" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51j-g3-Use">
+                                <rect key="frame" x="20" y="319" width="353" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jux-fD-eYL">
+                                <rect key="frame" x="36" y="360" width="321" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzJ-nW-m6K">
+                                <rect key="frame" x="36" y="370" width="321" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="IRX-WI-zxX" secondAttribute="trailing" constant="20" id="0U5-BF-8z6"/>
                             <constraint firstItem="4IR-ZM-cDg" firstAttribute="leading" secondItem="fWB-nZ-YT8" secondAttribute="leadingMargin" constant="20" id="0Wb-bE-kCL"/>
+                            <constraint firstItem="jux-fD-eYL" firstAttribute="leading" secondItem="fWB-nZ-YT8" secondAttribute="leadingMargin" constant="20" id="CUs-dT-WgU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7Nv-0x-TZf" secondAttribute="trailing" constant="20" id="K33-7w-tgc"/>
+                            <constraint firstItem="rzJ-nW-m6K" firstAttribute="leading" secondItem="fWB-nZ-YT8" secondAttribute="leadingMargin" constant="20" id="Lhp-K3-5ta"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rzJ-nW-m6K" secondAttribute="trailing" constant="20" id="O7i-6u-esU"/>
+                            <constraint firstItem="51j-g3-Use" firstAttribute="top" secondItem="7Nv-0x-TZf" secondAttribute="bottom" constant="50" id="OKR-qN-1d2"/>
+                            <constraint firstItem="51j-g3-Use" firstAttribute="leading" secondItem="fWB-nZ-YT8" secondAttribute="leading" constant="20" id="OdY-Bx-cMz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Evd-J0-eR4" secondAttribute="trailing" constant="20" id="QeM-BC-KmS"/>
                             <constraint firstItem="Evd-J0-eR4" firstAttribute="leading" secondItem="fWB-nZ-YT8" secondAttribute="leadingMargin" constant="20" id="RwV-jC-J0f"/>
                             <constraint firstItem="4IR-ZM-cDg" firstAttribute="top" secondItem="T7f-9V-fKS" secondAttribute="bottom" constant="50" id="UqH-Ut-i3Z"/>
+                            <constraint firstItem="rzJ-nW-m6K" firstAttribute="top" secondItem="jux-fD-eYL" secondAttribute="bottom" constant="10" id="W3M-bC-mzg"/>
+                            <constraint firstItem="jux-fD-eYL" firstAttribute="top" secondItem="51j-g3-Use" secondAttribute="bottom" constant="20" id="Z2N-6P-BOE"/>
+                            <constraint firstAttribute="trailing" secondItem="51j-g3-Use" secondAttribute="trailing" constant="20" id="baE-rT-YAu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4IR-ZM-cDg" secondAttribute="trailing" constant="20" id="bvc-yj-Ju3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jux-fD-eYL" secondAttribute="trailing" constant="20" id="eI9-Cc-lBS"/>
                             <constraint firstItem="IRX-WI-zxX" firstAttribute="top" secondItem="4IR-ZM-cDg" secondAttribute="bottom" constant="20" id="jgx-5f-gAG"/>
                             <constraint firstItem="IRX-WI-zxX" firstAttribute="leading" secondItem="fWB-nZ-YT8" secondAttribute="leadingMargin" constant="20" id="kZh-eK-4MV"/>
                             <constraint firstItem="Evd-J0-eR4" firstAttribute="top" secondItem="IRX-WI-zxX" secondAttribute="bottom" constant="10" id="qrJ-no-bZ2"/>
@@ -327,6 +354,8 @@
                         <outlet property="LongitudeLabel" destination="Evd-J0-eR4" id="fwM-vT-f9S"/>
                         <outlet property="getCoordinatesButton" destination="4IR-ZM-cDg" id="RdE-d3-G1d"/>
                         <outlet property="latitudeLabel" destination="IRX-WI-zxX" id="BNS-u1-EMz"/>
+                        <outlet property="latitudeNativeLabel" destination="jux-fD-eYL" id="eLu-aq-0C5"/>
+                        <outlet property="longitudNativeLabel" destination="rzJ-nW-m6K" id="Flk-tN-jqm"/>
                         <outlet property="openMapButton" destination="7Nv-0x-TZf" id="VHo-AO-o2l"/>
                     </connections>
                 </viewController>
